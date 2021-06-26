@@ -564,7 +564,6 @@ namespace StockInventoryManagement
 
             public static bool deleteItem(long id)
             {
-
                 try
                 {
                     int inserted = Job.Database.executeQuery("update _item set itemDeleted=1 where itemId=@id", new SQLiteParameter[] { new SQLiteParameter("@id", id) });
@@ -572,7 +571,22 @@ namespace StockInventoryManagement
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Unable to delete item from database. [" + ex.Message + "]");
+                    throw new Exception("Nije moguce izbrisati artikal iz baze. [" + ex.Message + "]");
+                }
+                // just saving the string DELETE FROM _item WHERE itemId = 4;
+                return false;
+            }
+
+            public static bool updateItem(long id, String itemName, String itemCode, double itemPPU)
+            {
+                try
+                {
+                    int inserted = Job.Database.executeQuery("update _item set itemName=@name, itemCode=@code, itemPPU=@price where itemId=@id", new SQLiteParameter[] { new SQLiteParameter("@name", itemName), new SQLiteParameter("@code", itemCode), new SQLiteParameter("@price", itemPPU), new SQLiteParameter("@id", id) });
+                    return inserted > 0;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Nije moguce izmeniti artikal u bazi. [" + ex.Message + "]");
                 }
 
                 return false;
@@ -736,10 +750,10 @@ namespace StockInventoryManagement
         public static void initActionListView(BrightIdeasSoftware.ObjectListView olv)
         {
             List<classes.ActionItem> actions = new List<classes.ActionItem>();
-            actions.Add(new classes.ActionItem("Stock", classes.ActionItem.Action.STOCK));
-            actions.Add(new classes.ActionItem("Transactions", classes.ActionItem.Action.TRANSACTIONS));
-            actions.Add(new classes.ActionItem("Clients", classes.ActionItem.Action.CLIENTS));
-            actions.Add(new classes.ActionItem("Items", classes.ActionItem.Action.ITEMS));
+            actions.Add(new classes.ActionItem("Stanje magacina", classes.ActionItem.Action.STOCK));
+            actions.Add(new classes.ActionItem("Promena stanja", classes.ActionItem.Action.TRANSACTIONS));
+            actions.Add(new classes.ActionItem("Klijenti", classes.ActionItem.Action.CLIENTS));
+            actions.Add(new classes.ActionItem("Artikli", classes.ActionItem.Action.ITEMS));
             olv.SetObjects(actions);
         }
 
@@ -885,11 +899,11 @@ namespace StockInventoryManagement
 
                 y += (baseFont.Height * 2);
                 x = gap1;
-                g.DrawString("Items", new Font(baseFont, FontStyle.Bold), blackBrush, x, y);
+                g.DrawString("Artikli", new Font(baseFont, FontStyle.Bold), blackBrush, x, y);
                 x += gap2;
                 g.DrawString("Qty x Rate", new Font(baseFont, FontStyle.Bold), blackBrush, x, y);
                 x += gap3;
-                g.DrawString("Amount", new Font(baseFont, FontStyle.Bold), blackBrush, x, y);
+                g.DrawString("Iznos", new Font(baseFont, FontStyle.Bold), blackBrush, x, y);
                 y += baseFont.Height + 5;
                 x = gap1;
                 g.DrawLine(new Pen(blackBrush, 1), x, y, e.PageBounds.Width - 10, y);
@@ -914,7 +928,7 @@ namespace StockInventoryManagement
                 y += baseFont.Height + 10;
 
                 x = gap2 + gap1;
-                g.DrawString("Total: ", baseFont, blackBrush, x, y);
+                g.DrawString("Iznos: ", baseFont, blackBrush, x, y);
                 x = gap1 + gap2 + gap3;
                 g.DrawString((total_discount+total_price).ToString("0.00"), baseFont, blackBrush, x, y);
                 y += baseFont.Height + 5;
@@ -923,7 +937,7 @@ namespace StockInventoryManagement
 
 
                 x = gap1 + gap2;
-                g.DrawString("Discount: ", baseFont, blackBrush, x, y);
+                g.DrawString("Popust: ", baseFont, blackBrush, x, y);
                 x = gap1 + gap2 + gap3;
                 g.DrawString(total_discount.ToString("0.00"), baseFont, blackBrush, x, y);
                 y += baseFont.Height + 5;
@@ -931,7 +945,7 @@ namespace StockInventoryManagement
                 y += 5;
 
                 x = gap1 + gap2;
-                g.DrawString("Final Amount: ", baseFont, blackBrush, x, y);
+                g.DrawString("Konacna suma: ", baseFont, blackBrush, x, y);
                 x = gap1 + gap2 + gap3;
                 g.DrawString(total_price.ToString("0.00"), baseFont, blackBrush, x, y);
                 y += baseFont.Height + 5;

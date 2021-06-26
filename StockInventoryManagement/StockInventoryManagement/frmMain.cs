@@ -31,9 +31,9 @@ namespace StockInventoryManagement
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            Text = "Stock Inventory Management - " + Properties.Settings.Default.appOwner;
-            label1.Text = Properties.Settings.Default.appOwner + " - Stock Inventory Management";
-            label2.Text = "v" + Properties.Settings.Default.appVersion;
+            Text = "Menadzment magacina - " + Properties.Settings.Default.appOwner;
+            label1.Text = Properties.Settings.Default.appOwner + " - Menadzment magacina";
+            label2.Text = "------";
             initScreen();
             Job.Database.openDatabaseConnection();
         }

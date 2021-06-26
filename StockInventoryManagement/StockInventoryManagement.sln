@@ -1,11 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockInventoryManagement", "StockInventoryManagement\StockInventoryManagement.csproj", "{FA278EB9-05D2-49EE-801F-ACE493AFC205}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{F9E3957D-496A-4169-97BD-DDEF7852AC8F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DE36C09F-E093-488A-8E8A-B10A085D708B}"
+	ProjectSection(SolutionItems) = preProject
+		Setup\Setup.wxs = Setup\Setup.wxs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +20,11 @@ Global
 		{FA278EB9-05D2-49EE-801F-ACE493AFC205}.Debug|x86.Build.0 = Debug|x86
 		{FA278EB9-05D2-49EE-801F-ACE493AFC205}.Release|x86.ActiveCfg = Release|x86
 		{FA278EB9-05D2-49EE-801F-ACE493AFC205}.Release|x86.Build.0 = Release|x86
-		{F9E3957D-496A-4169-97BD-DDEF7852AC8F}.Debug|x86.ActiveCfg = Debug
-		{F9E3957D-496A-4169-97BD-DDEF7852AC8F}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {79C0B45F-B656-4C3C-8CE1-D2463A8ABA05}
 	EndGlobalSection
 EndGlobal

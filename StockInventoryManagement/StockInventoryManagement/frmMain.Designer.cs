@@ -54,8 +54,9 @@
             this.panTop.Controls.Add(this.label1);
             this.panTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panTop.Location = new System.Drawing.Point(0, 0);
+            this.panTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panTop.Name = "panTop";
-            this.panTop.Size = new System.Drawing.Size(1008, 108);
+            this.panTop.Size = new System.Drawing.Size(1260, 96);
             this.panTop.TabIndex = 0;
             // 
             // label2
@@ -63,9 +64,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 48);
+            this.label2.Location = new System.Drawing.Point(15, 60);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 32);
+            this.label2.Size = new System.Drawing.Size(114, 41);
             this.label2.TabIndex = 0;
             this.label2.Text = "MALTA";
             // 
@@ -74,9 +76,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 12);
+            this.label1.Location = new System.Drawing.Point(15, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(326, 37);
+            this.label1.Size = new System.Drawing.Size(409, 46);
             this.label1.TabIndex = 0;
             this.label1.Text = "A. S. TIMBER IMPORTERS";
             // 
@@ -86,9 +89,10 @@
             this.panLeft.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panLeft.Controls.Add(this.lvActions);
             this.panLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panLeft.Location = new System.Drawing.Point(0, 108);
+            this.panLeft.Location = new System.Drawing.Point(0, 96);
+            this.panLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panLeft.Name = "panLeft";
-            this.panLeft.Size = new System.Drawing.Size(204, 587);
+            this.panLeft.Size = new System.Drawing.Size(254, 773);
             this.panLeft.TabIndex = 1;
             // 
             // lvActions
@@ -99,6 +103,7 @@
             this.lvActions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lvActions.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
             this.lvActions.CellEditTabChangesRows = true;
+            this.lvActions.CellEditUseWholeCell = false;
             this.lvActions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumnAction});
             this.lvActions.Cursor = System.Windows.Forms.Cursors.Default;
@@ -109,24 +114,25 @@
             this.lvActions.GridLines = true;
             this.lvActions.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvActions.HeaderWordWrap = true;
-            this.lvActions.HighlightBackgroundColor = System.Drawing.SystemColors.Highlight;
-            this.lvActions.HighlightForegroundColor = System.Drawing.Color.White;
+            this.lvActions.HideSelection = false;
             this.lvActions.Location = new System.Drawing.Point(0, 0);
+            this.lvActions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lvActions.MultiSelect = false;
             this.lvActions.Name = "lvActions";
             this.lvActions.OverlayText.Text = "";
             this.lvActions.RenderNonEditableCheckboxesAsDisabled = true;
+            this.lvActions.SelectedBackColor = System.Drawing.SystemColors.Highlight;
             this.lvActions.SelectedColumnTint = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            this.lvActions.SelectedForeColor = System.Drawing.Color.White;
             this.lvActions.ShowCommandMenuOnRightClick = true;
             this.lvActions.ShowGroups = false;
             this.lvActions.ShowItemToolTips = true;
-            this.lvActions.Size = new System.Drawing.Size(202, 585);
+            this.lvActions.Size = new System.Drawing.Size(252, 771);
             this.lvActions.TabIndex = 3;
             this.lvActions.TintSortColumn = true;
-            this.lvActions.UnfocusedHighlightBackgroundColor = System.Drawing.Color.SteelBlue;
-            this.lvActions.UnfocusedHighlightForegroundColor = System.Drawing.Color.White;
+            this.lvActions.UnfocusedSelectedBackColor = System.Drawing.Color.SteelBlue;
+            this.lvActions.UnfocusedSelectedForeColor = System.Drawing.Color.White;
             this.lvActions.UseCompatibleStateImageBehavior = false;
-            this.lvActions.UseCustomSelectionColors = true;
             this.lvActions.UseExplorerTheme = true;
             this.lvActions.UseFilterIndicator = true;
             this.lvActions.UseFiltering = true;
@@ -146,9 +152,10 @@
             // 
             this.panContent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panContent.Location = new System.Drawing.Point(204, 108);
+            this.panContent.Location = new System.Drawing.Point(254, 96);
+            this.panContent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panContent.Name = "panContent";
-            this.panContent.Size = new System.Drawing.Size(804, 587);
+            this.panContent.Size = new System.Drawing.Size(1006, 773);
             this.panContent.TabIndex = 2;
             this.panContent.SizeChanged += new System.EventHandler(this.panContent_SizeChanged);
             // 
@@ -157,41 +164,44 @@
             this.panBottom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panBottom.Controls.Add(this.statusStrip1);
             this.panBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panBottom.Location = new System.Drawing.Point(0, 695);
+            this.panBottom.Location = new System.Drawing.Point(0, 869);
+            this.panBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panBottom.Name = "panBottom";
-            this.panBottom.Size = new System.Drawing.Size(1008, 33);
+            this.panBottom.Size = new System.Drawing.Size(1260, 41);
             this.panBottom.TabIndex = 3;
             // 
             // statusStrip1
             // 
             this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tlblDatabaseStatus});
             this.statusStrip1.Location = new System.Drawing.Point(0, 0);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1006, 31);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 18, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1258, 39);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // tlblDatabaseStatus
             // 
             this.tlblDatabaseStatus.Name = "tlblDatabaseStatus";
-            this.tlblDatabaseStatus.Size = new System.Drawing.Size(135, 26);
+            this.tlblDatabaseStatus.Size = new System.Drawing.Size(171, 33);
             this.tlblDatabaseStatus.Text = "No database connected!";
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1008, 728);
+            this.ClientSize = new System.Drawing.Size(1260, 910);
             this.Controls.Add(this.panContent);
             this.Controls.Add(this.panLeft);
             this.Controls.Add(this.panTop);
             this.Controls.Add(this.panBottom);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MinimumSize = new System.Drawing.Size(1024, 768);
+            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.MinimumSize = new System.Drawing.Size(1276, 948);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stock Inventory Management";

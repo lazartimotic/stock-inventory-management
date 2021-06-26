@@ -175,7 +175,7 @@ namespace StockInventoryManagement.forms
 
             if (itemCode.Length == 0)
             {
-                MessageBox.Show(this, "Please enter valid item/item code.", "No item", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show(this, "Unesite validno ime artikla.", "No item", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
             }
 
@@ -289,7 +289,7 @@ namespace StockInventoryManagement.forms
                         {
                             Invoke(new Action(() =>
                             {
-                                MessageBox.Show(this, "Your purchase transaction successfully submited.", "Submitted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show(this, "Uspesno kupljeno.", "Upisano", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 btnClearPurchaseForm_Click(btnClearPurchaseForm, new EventArgs());
                                 lvItemsPurchase.ClearObjects();
                             }));
@@ -298,7 +298,7 @@ namespace StockInventoryManagement.forms
                         {
                             Invoke(new Action(() =>
                             {
-                                MessageBox.Show(this, "Sorry, your new transaction isn't added into database, please try again.", "Problem while adding transaction", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show(this, "Neuspesna kupovina, nije uneto u bazu, pokusajte ponovo.", "Problem while adding transaction", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }));
                         }
 
@@ -311,7 +311,7 @@ namespace StockInventoryManagement.forms
                 {
                     Invoke(new Action(() =>
                     {
-                        MessageBox.Show(this, "Sorry, unable to add new purchase transaction, please try again." + Environment.NewLine + "Error message : " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(this, "Neuspesna kupovina, pokusajte ponovo." + Environment.NewLine + "Error message : " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }));
                 }
                 finally
@@ -338,7 +338,7 @@ namespace StockInventoryManagement.forms
         {
             if (lvItemsPurchase.Objects == null)
             {
-                lblTotalPurchasedItems.Text = "Items: Rs. 0/-";
+                lblTotalPurchasedItems.Text = "Ukupna cena: Rsd. 0/-";
                 return;
             }
             double totalPrice = 0;
@@ -346,7 +346,7 @@ namespace StockInventoryManagement.forms
             {
                 totalPrice += (item.qty * item.itemPPU);
             }
-            lblTotalPurchasedItems.Text = "Items: Rs. " + totalPrice + "/-";
+            lblTotalPurchasedItems.Text = "Ukupna cena: Rsd. " + totalPrice + "/-";
         }
 
         private void lvItemsPurchase_CellEditFinishing(object sender, BrightIdeasSoftware.CellEditEventArgs e)
@@ -366,6 +366,7 @@ namespace StockInventoryManagement.forms
             cmbItemCode1.Text = "";
             txtQty1.Value = 0;
             txtPPU1.Value = 0;
+            ItemRefCode.Text = "0";
             loadItems();
             cmbItemCode1.Focus();
         }
@@ -383,17 +384,18 @@ namespace StockInventoryManagement.forms
         {
             if (cmbItemCode.SelectedIndex == -1)
             {
-                MessageBox.Show(this, "Please select item from list.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, "Odaberite artikal sa spiska.", "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             String itemCode = cmbItemCode.Text.Trim();
             double qty = double.Parse(txtQty.Value.ToString());
             double ppu = double.Parse(txtPPU.Value.ToString());
             double dicount = 0;// double.Parse(txtDiscount.Value.ToString());
+            double refCode = long.Parse(ItemRefCode.Text.ToString());
 
             if (itemCode.Length == 0)
             {
-                MessageBox.Show(this, "Please enter valid item/item code.", "No item", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show(this, "Unesite validno ime artikla.", "Ne postoji artikal", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
             }
 
@@ -427,7 +429,7 @@ namespace StockInventoryManagement.forms
                     {
                         Invoke(new Action(() =>
                         {
-                            MessageBox.Show(this, "Sorry you can sale this much quantity as its not available. You need to purchase first.", "Stock not available", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                            MessageBox.Show(this, "Ne mozete prodati ovu kolicinu artikla jer je nema dovoljno na stanju.", "Stock not available", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                         }));
                     }
                     else
@@ -467,7 +469,7 @@ namespace StockInventoryManagement.forms
         {
             if (lvItemsSale.Objects == null)
             {
-                lblTotalSalePrice.Text = "Item purchased : Rs. 0/-";
+                lblTotalSalePrice.Text = "Ukupna cena : Rsd. 0/-";
                 return;
             }
 
@@ -476,7 +478,7 @@ namespace StockInventoryManagement.forms
             {
                 totalAmount += ((item.qty * item.itemPPU) - item.discount);
             }
-            lblTotalSalePrice.Text = "Item purchased : Rs. " + totalAmount + "/-";
+            lblTotalSalePrice.Text = "Ukupna cena : Rsd. " + totalAmount + "/-";
         }
 
         private void lvItemsSale_CellOver(object sender, BrightIdeasSoftware.CellOverEventArgs e)
@@ -498,6 +500,7 @@ namespace StockInventoryManagement.forms
             txtQty.Value = 0;
             txtPPU.Value = 0;
             txtDiscount.Value = 0;
+            ItemRefCode.Text = "0";
             cmbItemCode.Focus();
         }
         #endregion
@@ -515,7 +518,7 @@ namespace StockInventoryManagement.forms
             double discount = 0;
             if(!double.TryParse(txtDiscount.Value.ToString(), out discount))
             {
-                MessageBox.Show(this, "Please enter valid Discount value.", "Discount Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show(this, "Unesite validnu vrednost za popust.", "Discount Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 txtDiscount.Focus();
                 return;
             }
@@ -541,20 +544,16 @@ namespace StockInventoryManagement.forms
                     string clientName = cmbClientRef.Text;
                     if (clientName.Trim().Length == 0)
                     {
-                        MessageBox.Show(this, "Please enter valid client name." + Environment.NewLine + "Unable to add client entry, please try again.", "Client Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        clientName = "Klijent";
+                    }
+
+                    if (!Job.Database.addClient(clientName, "", "", "", "", "", ""))
+                    {
+                        MessageBox.Show(this, "Client name not added successfully into database." + Environment.NewLine + "Unable to add client entry, please try again.", "Client Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         cmbClientRef.Focus();
                         return;
                     }
-                    else
-                    {
-                        if (!Job.Database.addClient(clientName, "", "", "", "", "", ""))
-                        {
-                            MessageBox.Show(this, "Client name not added successfully into database." + Environment.NewLine + "Unable to add client entry, please try again.", "Client Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            cmbClientRef.Focus();
-                            return;
-                        }
-                        client = Job.Database.last_inserted_rowid();
-                    }
+                    client = Job.Database.last_inserted_rowid();
                 }
                 catch (Exception ex)
                 {
@@ -615,14 +614,14 @@ namespace StockInventoryManagement.forms
                         {
                             Invoke(new Action(() =>
                             {
-                                MessageBox.Show(this, "Your sale transaction successfully submited.", "Submitted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show(this, "Prodaja uspesno izvrsena.", "Upisano", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 btnClearSaleForm_Click(btnClearSaleForm, new EventArgs());
                                 lvItemsSale.ClearObjects();
 
-                                if (MessageBox.Show(this, "Do you want to print invoice now ?", "Print Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                                {
-                                    Job.showInvoiceDialog(this, Job.Database.LastTransactionID);
-                                }
+                                //if (MessageBox.Show(this, "Do you want to print invoice now ?", "Print Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                //{
+                                //    Job.showInvoiceDialog(this, Job.Database.LastTransactionID);
+                                //}
 
                             }));
                         }
@@ -630,7 +629,7 @@ namespace StockInventoryManagement.forms
                         {
                             Invoke(new Action(() =>
                             {
-                                MessageBox.Show(this, "Sorry, your new transaction isn't added into database, please try again.", "Problem while adding transaction", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show(this, "Transakcija neuspesna, probajte ponovo.", "Problem sa transakcijom", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }));
                         }
 
@@ -643,7 +642,7 @@ namespace StockInventoryManagement.forms
                 {
                     Invoke(new Action(() =>
                     {
-                        MessageBox.Show(this, "Sorry, unable to add new sale transaction, please try again." + Environment.NewLine + "Error message : " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(this, "Neuspesna prodaja, probajte ponovo." + Environment.NewLine + "Error message : " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }));
                 }
                 finally
@@ -694,7 +693,7 @@ namespace StockInventoryManagement.forms
                         lblMostItemSold.Text = mostItem;
                         lblLeastItemSold.Text = leastItem;
                         lvReport.SetObjects(report);
-                        lblTotalStatus.Text = "Total Sale: " + totalSales.ToString("0.00") + "/- and Total Purchase:" + totalPurchases.ToString("0.00");
+                        lblTotalStatus.Text = "Ukupno prodato: " + totalSales.ToString("0.00") + "/- i ukupno kupljeno:" + totalPurchases.ToString("0.00");
                     }));
 
                     #endregion
@@ -763,6 +762,7 @@ namespace StockInventoryManagement.forms
             if (cmbItemCode.SelectedIndex > -1)
             {
                 txtPPU.Value = (Decimal)((classes.Item)cmbItemCode.SelectedItem).itemPPU;
+                ItemRefCode.Text = ((classes.Item)cmbItemCode.SelectedItem).itemCode.ToString();
             }
         }
 

@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="appOwner" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Patel Auto Technology</Value>
+      <Value Profile="(Default)">Amikus Vet 994</Value>
     </Setting>
     <Setting Name="appVersion" Type="System.String" Scope="User">
       <Value Profile="(Default)">1.0</Value>

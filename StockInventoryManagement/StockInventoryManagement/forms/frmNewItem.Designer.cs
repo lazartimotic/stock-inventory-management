@@ -41,79 +41,87 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 20);
+            this.label1.Location = new System.Drawing.Point(25, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 21);
+            this.label1.Size = new System.Drawing.Size(129, 28);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Item name :";
+            this.label1.Text = "Naziv artikla :";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(20, 50);
+            this.textBox1.Location = new System.Drawing.Point(25, 62);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(290, 29);
+            this.textBox1.Size = new System.Drawing.Size(362, 34);
             this.textBox1.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 90);
+            this.label2.Location = new System.Drawing.Point(25, 112);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 21);
+            this.label2.Size = new System.Drawing.Size(55, 28);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Item Ref :";
+            this.label2.Text = "Sifra:";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(20, 120);
+            this.textBox2.Location = new System.Drawing.Point(25, 150);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(290, 29);
+            this.textBox2.Size = new System.Drawing.Size(362, 34);
             this.textBox2.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 160);
+            this.label3.Location = new System.Drawing.Point(25, 200);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 21);
+            this.label3.Size = new System.Drawing.Size(64, 28);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Item Rate :";
+            this.label3.Text = "Cena :";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(20, 190);
+            this.textBox3.Location = new System.Drawing.Point(25, 238);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(290, 29);
+            this.textBox3.Size = new System.Drawing.Size(362, 34);
             this.textBox3.TabIndex = 2;
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(20, 240);
+            this.btnOk.Location = new System.Drawing.Point(25, 300);
+            this.btnOk.Margin = new System.Windows.Forms.Padding(4);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(90, 30);
+            this.btnOk.Size = new System.Drawing.Size(112, 38);
             this.btnOk.TabIndex = 3;
-            this.btnOk.Text = "&Submit";
+            this.btnOk.Text = "&Dodaj";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(220, 240);
+            this.btnCancel.Location = new System.Drawing.Point(275, 300);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(90, 30);
+            this.btnCancel.Size = new System.Drawing.Size(112, 38);
             this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "&Cancel";
+            this.btnCancel.Text = "&Otkazi";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmNewItem
             // 
             this.AcceptButton = this.btnOk;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(331, 282);
+            this.ClientSize = new System.Drawing.Size(414, 352);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.textBox3);
@@ -124,13 +132,13 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmNewItem";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "New Item";
+            this.Text = "Dodavanje novog artikla";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

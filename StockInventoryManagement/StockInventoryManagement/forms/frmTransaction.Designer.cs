@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.ItemRefCode = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.dpInvoiceDate = new System.Windows.Forms.DateTimePicker();
             this.label20 = new System.Windows.Forms.Label();
             this.cmbClientRef = new System.Windows.Forms.ComboBox();
@@ -139,6 +141,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.ItemRefCode);
+            this.tabPage1.Controls.Add(this.label22);
             this.tabPage1.Controls.Add(this.dpInvoiceDate);
             this.tabPage1.Controls.Add(this.label20);
             this.tabPage1.Controls.Add(this.cmbClientRef);
@@ -163,14 +167,33 @@
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Size = new System.Drawing.Size(1228, 852);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Sale";
+            this.tabPage1.Text = "Prodaja";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // ItemRefCode
+            // 
+            this.ItemRefCode.Enabled = false;
+            this.ItemRefCode.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemRefCode.Location = new System.Drawing.Point(29, 162);
+            this.ItemRefCode.Name = "ItemRefCode";
+            this.ItemRefCode.Size = new System.Drawing.Size(209, 34);
+            this.ItemRefCode.TabIndex = 17;
+            this.ItemRefCode.Text = "0";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(25, 131);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(55, 28);
+            this.label22.TabIndex = 16;
+            this.label22.Text = "Sifra:";
             // 
             // dpInvoiceDate
             // 
             this.dpInvoiceDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dpInvoiceDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpInvoiceDate.Location = new System.Drawing.Point(20, 470);
+            this.dpInvoiceDate.Location = new System.Drawing.Point(25, 545);
             this.dpInvoiceDate.Margin = new System.Windows.Forms.Padding(4);
             this.dpInvoiceDate.Name = "dpInvoiceDate";
             this.dpInvoiceDate.Size = new System.Drawing.Size(200, 34);
@@ -180,12 +203,12 @@
             // 
             this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(20, 430);
+            this.label20.Location = new System.Drawing.Point(25, 505);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(129, 28);
+            this.label20.Size = new System.Drawing.Size(148, 28);
             this.label20.TabIndex = 14;
-            this.label20.Text = "Invoice Date :";
+            this.label20.Text = "Datum prodaje:";
             // 
             // cmbClientRef
             // 
@@ -193,7 +216,7 @@
             this.cmbClientRef.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbClientRef.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbClientRef.FormattingEnabled = true;
-            this.cmbClientRef.Location = new System.Drawing.Point(112, 526);
+            this.cmbClientRef.Location = new System.Drawing.Point(117, 601);
             this.cmbClientRef.Margin = new System.Windows.Forms.Padding(4);
             this.cmbClientRef.Name = "cmbClientRef";
             this.cmbClientRef.Size = new System.Drawing.Size(348, 36);
@@ -206,33 +229,34 @@
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.txtDeliveryAddress);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Location = new System.Drawing.Point(25, 589);
+            this.groupBox1.Location = new System.Drawing.Point(293, 699);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(435, 165);
+            this.groupBox1.Size = new System.Drawing.Size(252, 122);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Delivery information";
+            this.groupBox1.Text = "Podaci za isporuku";
+            this.groupBox1.Visible = false;
             // 
             // dtDelivery
             // 
             this.dtDelivery.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtDelivery.Location = new System.Drawing.Point(120, 105);
+            this.dtDelivery.Location = new System.Drawing.Point(178, 105);
             this.dtDelivery.Margin = new System.Windows.Forms.Padding(4);
             this.dtDelivery.Name = "dtDelivery";
-            this.dtDelivery.Size = new System.Drawing.Size(299, 34);
+            this.dtDelivery.Size = new System.Drawing.Size(241, 34);
             this.dtDelivery.TabIndex = 3;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(45, 105);
+            this.label12.Location = new System.Drawing.Point(0, 105);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(62, 28);
+            this.label12.Size = new System.Drawing.Size(155, 28);
             this.label12.TabIndex = 2;
-            this.label12.Text = "Date :";
+            this.label12.Text = "Datum isporuke:";
             // 
             // txtDeliveryAddress
             // 
@@ -248,9 +272,9 @@
             this.label11.Location = new System.Drawing.Point(15, 45);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(91, 28);
+            this.label11.Size = new System.Drawing.Size(76, 28);
             this.label11.TabIndex = 0;
-            this.label11.Text = "Address :";
+            this.label11.Text = "Adresa:";
             // 
             // label10
             // 
@@ -279,6 +303,7 @@
             this.lvItemsSale.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lvItemsSale.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
             this.lvItemsSale.CellEditTabChangesRows = true;
+            this.lvItemsSale.CellEditUseWholeCell = false;
             this.lvItemsSale.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumnItem,
             this.olvColumnQty,
@@ -286,32 +311,31 @@
             this.olvColumnDiscount,
             this.olvColumnTotalSalePrice});
             this.lvItemsSale.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lvItemsSale.EmptyListMsg = "Empty list";
+            this.lvItemsSale.EmptyListMsg = "Prazna lista";
             this.lvItemsSale.EmptyListMsgFont = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvItemsSale.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvItemsSale.FullRowSelect = true;
             this.lvItemsSale.GridLines = true;
-            this.lvItemsSale.HeaderWordWrap = true;
-            this.lvItemsSale.HighlightBackgroundColor = System.Drawing.SystemColors.Highlight;
-            this.lvItemsSale.HighlightForegroundColor = System.Drawing.Color.White;
-            this.lvItemsSale.Location = new System.Drawing.Point(495, 75);
+            this.lvItemsSale.HideSelection = false;
+            this.lvItemsSale.Location = new System.Drawing.Point(563, 75);
             this.lvItemsSale.Margin = new System.Windows.Forms.Padding(4);
             this.lvItemsSale.Name = "lvItemsSale";
             this.lvItemsSale.OverlayText.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvItemsSale.OverlayText.Text = "Total Price";
             this.lvItemsSale.OverlayText.TextColor = System.Drawing.Color.Black;
             this.lvItemsSale.RenderNonEditableCheckboxesAsDisabled = true;
+            this.lvItemsSale.SelectedBackColor = System.Drawing.SystemColors.Highlight;
             this.lvItemsSale.SelectedColumnTint = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            this.lvItemsSale.SelectedForeColor = System.Drawing.Color.White;
             this.lvItemsSale.ShowCommandMenuOnRightClick = true;
             this.lvItemsSale.ShowGroups = false;
             this.lvItemsSale.ShowItemToolTips = true;
-            this.lvItemsSale.Size = new System.Drawing.Size(705, 751);
+            this.lvItemsSale.Size = new System.Drawing.Size(661, 751);
             this.lvItemsSale.TabIndex = 8;
             this.lvItemsSale.TintSortColumn = true;
-            this.lvItemsSale.UnfocusedHighlightBackgroundColor = System.Drawing.Color.SteelBlue;
-            this.lvItemsSale.UnfocusedHighlightForegroundColor = System.Drawing.Color.White;
+            this.lvItemsSale.UnfocusedSelectedBackColor = System.Drawing.Color.SteelBlue;
+            this.lvItemsSale.UnfocusedSelectedForeColor = System.Drawing.Color.White;
             this.lvItemsSale.UseCompatibleStateImageBehavior = false;
-            this.lvItemsSale.UseCustomSelectionColors = true;
             this.lvItemsSale.UseExplorerTheme = true;
             this.lvItemsSale.UseFilterIndicator = true;
             this.lvItemsSale.UseFiltering = true;
@@ -327,61 +351,65 @@
             // 
             this.olvColumnItem.AspectName = "itemName";
             this.olvColumnItem.FillsFreeSpace = true;
-            this.olvColumnItem.IsEditable = false;
-            this.olvColumnItem.Text = "Item";
-            this.olvColumnItem.Width = 108;
+            this.olvColumnItem.Text = "Artikal";
+            this.olvColumnItem.Width = 90;
+            this.olvColumnItem.WordWrap = true;
             // 
             // olvColumnQty
             // 
             this.olvColumnQty.AspectName = "qty";
-            this.olvColumnQty.Text = "Qty";
+            this.olvColumnQty.Text = "Kolicina";
             // 
             // olvColumnPPU
             // 
             this.olvColumnPPU.AspectName = "itemPPU";
-            this.olvColumnPPU.Text = "Price/Unit";
+            this.olvColumnPPU.Text = "Cena/komad";
             // 
             // olvColumnDiscount
             // 
             this.olvColumnDiscount.AspectName = "discount";
-            this.olvColumnDiscount.Text = "Discount";
+            this.olvColumnDiscount.Text = "Popust";
             // 
             // olvColumnTotalSalePrice
             // 
             this.olvColumnTotalSalePrice.IsEditable = false;
-            this.olvColumnTotalSalePrice.Text = "Price";
+            this.olvColumnTotalSalePrice.Text = "Ukupna cena";
             // 
             // btnPrintInvoice
             // 
             this.btnPrintInvoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnPrintInvoice.Location = new System.Drawing.Point(25, 776);
+            this.btnPrintInvoice.Location = new System.Drawing.Point(29, 733);
             this.btnPrintInvoice.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrintInvoice.Name = "btnPrintInvoice";
             this.btnPrintInvoice.Size = new System.Drawing.Size(165, 45);
             this.btnPrintInvoice.TabIndex = 11;
-            this.btnPrintInvoice.Text = "&PRINT INVOICE";
+            this.btnPrintInvoice.Text = "&Ukloni sa stanja";
             this.btnPrintInvoice.UseVisualStyleBackColor = true;
             this.btnPrintInvoice.Click += new System.EventHandler(this.btnPrintInvoice_Click);
             // 
             // btnClearSaleForm
             // 
-            this.btnClearSaleForm.Location = new System.Drawing.Point(370, 180);
+            this.btnClearSaleForm.AutoSize = true;
+            this.btnClearSaleForm.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnClearSaleForm.Location = new System.Drawing.Point(161, 230);
             this.btnClearSaleForm.Margin = new System.Windows.Forms.Padding(4);
             this.btnClearSaleForm.Name = "btnClearSaleForm";
-            this.btnClearSaleForm.Size = new System.Drawing.Size(105, 45);
+            this.btnClearSaleForm.Size = new System.Drawing.Size(120, 38);
             this.btnClearSaleForm.TabIndex = 7;
-            this.btnClearSaleForm.Text = "&CLEAR";
+            this.btnClearSaleForm.Text = "&Ocisti polja";
             this.btnClearSaleForm.UseVisualStyleBackColor = true;
             this.btnClearSaleForm.Click += new System.EventHandler(this.btnClearSaleForm_Click);
             // 
             // btnAddSaleItem
             // 
-            this.btnAddSaleItem.Location = new System.Drawing.Point(260, 180);
+            this.btnAddSaleItem.AutoSize = true;
+            this.btnAddSaleItem.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAddSaleItem.Location = new System.Drawing.Point(30, 230);
             this.btnAddSaleItem.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddSaleItem.Name = "btnAddSaleItem";
-            this.btnAddSaleItem.Size = new System.Drawing.Size(105, 45);
+            this.btnAddSaleItem.Size = new System.Drawing.Size(75, 38);
             this.btnAddSaleItem.TabIndex = 6;
-            this.btnAddSaleItem.Text = "&ADD";
+            this.btnAddSaleItem.Text = "&Dodaj";
             this.btnAddSaleItem.UseVisualStyleBackColor = true;
             this.btnAddSaleItem.Click += new System.EventHandler(this.btnAddSaleItem_Click);
             // 
@@ -389,7 +417,7 @@
             // 
             this.txtDiscount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtDiscount.DecimalPlaces = 2;
-            this.txtDiscount.Location = new System.Drawing.Point(240, 470);
+            this.txtDiscount.Location = new System.Drawing.Point(245, 545);
             this.txtDiscount.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiscount.Maximum = new decimal(new int[] {
             999999999,
@@ -403,7 +431,7 @@
             // txtPPU
             // 
             this.txtPPU.DecimalPlaces = 2;
-            this.txtPPU.Location = new System.Drawing.Point(30, 190);
+            this.txtPPU.Location = new System.Drawing.Point(269, 163);
             this.txtPPU.Margin = new System.Windows.Forms.Padding(4);
             this.txtPPU.Maximum = new decimal(new int[] {
             999999999,
@@ -418,12 +446,12 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(240, 430);
+            this.label4.Location = new System.Drawing.Point(245, 505);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 28);
+            this.label4.Size = new System.Drawing.Size(81, 28);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Discount :";
+            this.label4.Text = "Popust :";
             // 
             // txtQty
             // 
@@ -442,12 +470,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 145);
+            this.label3.Location = new System.Drawing.Point(264, 131);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 28);
+            this.label3.Size = new System.Drawing.Size(170, 28);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Price per unit :";
+            this.label3.Text = "Cena po komadu :";
             // 
             // cmbItemCode
             // 
@@ -467,9 +495,9 @@
             this.label2.Location = new System.Drawing.Point(255, 30);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 28);
+            this.label2.Size = new System.Drawing.Size(90, 28);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Quantity :";
+            this.label2.Text = "Kolicina :";
             // 
             // lblTotalSalePrice
             // 
@@ -477,20 +505,20 @@
             this.lblTotalSalePrice.Location = new System.Drawing.Point(495, 30);
             this.lblTotalSalePrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalSalePrice.Name = "lblTotalSalePrice";
-            this.lblTotalSalePrice.Size = new System.Drawing.Size(163, 28);
+            this.lblTotalSalePrice.Size = new System.Drawing.Size(134, 28);
             this.lblTotalSalePrice.TabIndex = 1;
-            this.lblTotalSalePrice.Text = "Items purchased :";
+            this.lblTotalSalePrice.Text = "Prodati artikli:";
             // 
             // label13
             // 
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(22, 526);
+            this.label13.Location = new System.Drawing.Point(27, 601);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(71, 28);
+            this.label13.Size = new System.Drawing.Size(75, 28);
             this.label13.TabIndex = 1;
-            this.label13.Text = "Client :";
+            this.label13.Text = "Kupac :";
             // 
             // label1
             // 
@@ -498,9 +526,9 @@
             this.label1.Location = new System.Drawing.Point(30, 30);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 28);
+            this.label1.Size = new System.Drawing.Size(107, 28);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Item / Item code :";
+            this.label1.Text = "Ime artikla:";
             // 
             // tabPage2
             // 
@@ -525,7 +553,7 @@
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Size = new System.Drawing.Size(1228, 852);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Purchase";
+            this.tabPage2.Text = "Kupovina";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // dpInvoiceDate_Purchase
@@ -545,9 +573,9 @@
             this.label21.Location = new System.Drawing.Point(20, 640);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(129, 28);
+            this.label21.Size = new System.Drawing.Size(166, 28);
             this.label21.TabIndex = 16;
-            this.label21.Text = "Invoice Date :";
+            this.label21.Text = "Datum kupovine :";
             // 
             // cmbClientRefPurchase
             // 
@@ -568,9 +596,9 @@
             this.label19.Location = new System.Drawing.Point(25, 689);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(71, 28);
+            this.label19.Size = new System.Drawing.Size(128, 28);
             this.label19.TabIndex = 14;
-            this.label19.Text = "Client :";
+            this.label19.Text = "Kupljeno od :";
             // 
             // lvItemsPurchase
             // 
@@ -586,6 +614,7 @@
             this.lvItemsPurchase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lvItemsPurchase.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
             this.lvItemsPurchase.CellEditTabChangesRows = true;
+            this.lvItemsPurchase.CellEditUseWholeCell = false;
             this.lvItemsPurchase.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumn1,
             this.olvColumn2,
@@ -598,8 +627,7 @@
             this.lvItemsPurchase.FullRowSelect = true;
             this.lvItemsPurchase.GridLines = true;
             this.lvItemsPurchase.HeaderWordWrap = true;
-            this.lvItemsPurchase.HighlightBackgroundColor = System.Drawing.SystemColors.Highlight;
-            this.lvItemsPurchase.HighlightForegroundColor = System.Drawing.Color.White;
+            this.lvItemsPurchase.HideSelection = false;
             this.lvItemsPurchase.Location = new System.Drawing.Point(500, 75);
             this.lvItemsPurchase.Margin = new System.Windows.Forms.Padding(4);
             this.lvItemsPurchase.Name = "lvItemsPurchase";
@@ -607,17 +635,18 @@
             this.lvItemsPurchase.OverlayText.Text = "Total Price";
             this.lvItemsPurchase.OverlayText.TextColor = System.Drawing.Color.Black;
             this.lvItemsPurchase.RenderNonEditableCheckboxesAsDisabled = true;
+            this.lvItemsPurchase.SelectedBackColor = System.Drawing.SystemColors.Highlight;
             this.lvItemsPurchase.SelectedColumnTint = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            this.lvItemsPurchase.SelectedForeColor = System.Drawing.Color.White;
             this.lvItemsPurchase.ShowCommandMenuOnRightClick = true;
             this.lvItemsPurchase.ShowGroups = false;
             this.lvItemsPurchase.ShowItemToolTips = true;
             this.lvItemsPurchase.Size = new System.Drawing.Size(704, 704);
             this.lvItemsPurchase.TabIndex = 5;
             this.lvItemsPurchase.TintSortColumn = true;
-            this.lvItemsPurchase.UnfocusedHighlightBackgroundColor = System.Drawing.Color.SteelBlue;
-            this.lvItemsPurchase.UnfocusedHighlightForegroundColor = System.Drawing.Color.White;
+            this.lvItemsPurchase.UnfocusedSelectedBackColor = System.Drawing.Color.SteelBlue;
+            this.lvItemsPurchase.UnfocusedSelectedForeColor = System.Drawing.Color.White;
             this.lvItemsPurchase.UseCompatibleStateImageBehavior = false;
-            this.lvItemsPurchase.UseCustomSelectionColors = true;
             this.lvItemsPurchase.UseExplorerTheme = true;
             this.lvItemsPurchase.UseFilterIndicator = true;
             this.lvItemsPurchase.UseFiltering = true;
@@ -635,25 +664,25 @@
             this.olvColumn1.AspectName = "itemName";
             this.olvColumn1.FillsFreeSpace = true;
             this.olvColumn1.IsEditable = false;
-            this.olvColumn1.Text = "Item";
+            this.olvColumn1.Text = "Artikal";
             this.olvColumn1.Width = 108;
             // 
             // olvColumn2
             // 
             this.olvColumn2.AspectName = "qty";
-            this.olvColumn2.Text = "Qty";
+            this.olvColumn2.Text = "Kolicina";
             this.olvColumn2.Width = 78;
             // 
             // olvColumn3
             // 
             this.olvColumn3.AspectName = "itemPPU";
-            this.olvColumn3.Text = "Price/Unit";
+            this.olvColumn3.Text = "Cena/komad";
             this.olvColumn3.Width = 77;
             // 
             // olvColumnTotalPrice
             // 
             this.olvColumnTotalPrice.IsEditable = false;
-            this.olvColumnTotalPrice.Text = "Total Price";
+            this.olvColumnTotalPrice.Text = "Ukupna cena";
             this.olvColumnTotalPrice.Width = 109;
             // 
             // btnAddToStock
@@ -664,7 +693,7 @@
             this.btnAddToStock.Name = "btnAddToStock";
             this.btnAddToStock.Size = new System.Drawing.Size(170, 45);
             this.btnAddToStock.TabIndex = 6;
-            this.btnAddToStock.Text = "&ADD TO STOCK";
+            this.btnAddToStock.Text = "&Dodaj na stanje";
             this.btnAddToStock.UseVisualStyleBackColor = true;
             this.btnAddToStock.Click += new System.EventHandler(this.btnAddToStock_Click);
             // 
@@ -673,9 +702,9 @@
             this.btnClearPurchaseForm.Location = new System.Drawing.Point(150, 225);
             this.btnClearPurchaseForm.Margin = new System.Windows.Forms.Padding(4);
             this.btnClearPurchaseForm.Name = "btnClearPurchaseForm";
-            this.btnClearPurchaseForm.Size = new System.Drawing.Size(105, 45);
+            this.btnClearPurchaseForm.Size = new System.Drawing.Size(169, 45);
             this.btnClearPurchaseForm.TabIndex = 4;
-            this.btnClearPurchaseForm.Text = "&CLEAR";
+            this.btnClearPurchaseForm.Text = "&Ocisti polja";
             this.btnClearPurchaseForm.UseVisualStyleBackColor = true;
             this.btnClearPurchaseForm.Click += new System.EventHandler(this.btnClearPurchaseForm_Click);
             // 
@@ -686,7 +715,7 @@
             this.btnAddPurchaseItem.Name = "btnAddPurchaseItem";
             this.btnAddPurchaseItem.Size = new System.Drawing.Size(105, 45);
             this.btnAddPurchaseItem.TabIndex = 3;
-            this.btnAddPurchaseItem.Text = "&ADD";
+            this.btnAddPurchaseItem.Text = "&Dodaj";
             this.btnAddPurchaseItem.UseVisualStyleBackColor = true;
             this.btnAddPurchaseItem.Click += new System.EventHandler(this.btnAddPurchaseItem_Click);
             // 
@@ -724,9 +753,9 @@
             this.label6.Location = new System.Drawing.Point(250, 130);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(136, 28);
+            this.label6.Size = new System.Drawing.Size(170, 28);
             this.label6.TabIndex = 9;
-            this.label6.Text = "Price per unit :";
+            this.label6.Text = "Cena po komadu :";
             // 
             // cmbItemCode1
             // 
@@ -746,21 +775,21 @@
             this.label7.Location = new System.Drawing.Point(25, 130);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 28);
+            this.label7.Size = new System.Drawing.Size(132, 28);
             this.label7.TabIndex = 11;
-            this.label7.Text = "Quantity :";
+            this.label7.Text = "Broj komada :";
             // 
             // label8
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(855, 795);
+            this.label8.Location = new System.Drawing.Point(822, 789);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(341, 23);
+            this.label8.Size = new System.Drawing.Size(391, 23);
             this.label8.TabIndex = 12;
-            this.label8.Text = "Press \'DELETE\' key to remove item from list";
+            this.label8.Text = "Pritisni \'DELETE\' taster za uklanjanje artikla sa liste";
             // 
             // lblTotalPurchasedItems
             // 
@@ -768,9 +797,9 @@
             this.lblTotalPurchasedItems.Location = new System.Drawing.Point(500, 38);
             this.lblTotalPurchasedItems.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalPurchasedItems.Name = "lblTotalPurchasedItems";
-            this.lblTotalPurchasedItems.Size = new System.Drawing.Size(59, 28);
+            this.lblTotalPurchasedItems.Size = new System.Drawing.Size(64, 28);
             this.lblTotalPurchasedItems.TabIndex = 12;
-            this.lblTotalPurchasedItems.Text = "Items";
+            this.lblTotalPurchasedItems.Text = "Artikli";
             // 
             // label9
             // 
@@ -778,9 +807,9 @@
             this.label9.Location = new System.Drawing.Point(25, 38);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(165, 28);
+            this.label9.Size = new System.Drawing.Size(107, 28);
             this.label9.TabIndex = 13;
-            this.label9.Text = "Item / Item code :";
+            this.label9.Text = "Ime artikla:";
             // 
             // tabPage3
             // 
@@ -797,7 +826,7 @@
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(1228, 852);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Transaction Report";
+            this.tabPage3.Text = "Izvestaji";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // tabControl2
@@ -826,14 +855,14 @@
             this.tabPage4.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage4.Size = new System.Drawing.Size(1173, 713);
             this.tabPage4.TabIndex = 0;
-            this.tabPage4.Text = "Report";
+            this.tabPage4.Text = "Izvestaj";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // lblTotalStatus
             // 
             this.lblTotalStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTotalStatus.AutoSize = true;
-            this.lblTotalStatus.Location = new System.Drawing.Point(12, 729);
+            this.lblTotalStatus.Location = new System.Drawing.Point(12, 801);
             this.lblTotalStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalStatus.Name = "lblTotalStatus";
             this.lblTotalStatus.Size = new System.Drawing.Size(344, 28);
@@ -853,6 +882,7 @@
             this.lvReport.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lvReport.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
             this.lvReport.CellEditTabChangesRows = true;
+            this.lvReport.CellEditUseWholeCell = false;
             this.lvReport.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumnDate,
             this.olvColumnSales,
@@ -864,8 +894,7 @@
             this.lvReport.FullRowSelect = true;
             this.lvReport.GridLines = true;
             this.lvReport.HeaderWordWrap = true;
-            this.lvReport.HighlightBackgroundColor = System.Drawing.SystemColors.Highlight;
-            this.lvReport.HighlightForegroundColor = System.Drawing.Color.White;
+            this.lvReport.HideSelection = false;
             this.lvReport.Location = new System.Drawing.Point(12, 12);
             this.lvReport.Margin = new System.Windows.Forms.Padding(4);
             this.lvReport.Name = "lvReport";
@@ -873,17 +902,18 @@
             this.lvReport.OverlayText.Text = "Double click to \'Print Invoice\'";
             this.lvReport.OverlayText.TextColor = System.Drawing.Color.Black;
             this.lvReport.RenderNonEditableCheckboxesAsDisabled = true;
+            this.lvReport.SelectedBackColor = System.Drawing.SystemColors.Highlight;
             this.lvReport.SelectedColumnTint = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            this.lvReport.SelectedForeColor = System.Drawing.Color.White;
             this.lvReport.ShowCommandMenuOnRightClick = true;
             this.lvReport.ShowGroups = false;
             this.lvReport.ShowItemToolTips = true;
-            this.lvReport.Size = new System.Drawing.Size(1150, 714);
+            this.lvReport.Size = new System.Drawing.Size(1150, 786);
             this.lvReport.TabIndex = 6;
             this.lvReport.TintSortColumn = true;
-            this.lvReport.UnfocusedHighlightBackgroundColor = System.Drawing.Color.SteelBlue;
-            this.lvReport.UnfocusedHighlightForegroundColor = System.Drawing.Color.White;
+            this.lvReport.UnfocusedSelectedBackColor = System.Drawing.Color.SteelBlue;
+            this.lvReport.UnfocusedSelectedForeColor = System.Drawing.Color.White;
             this.lvReport.UseCompatibleStateImageBehavior = false;
-            this.lvReport.UseCustomSelectionColors = true;
             this.lvReport.UseExplorerTheme = true;
             this.lvReport.UseFilterIndicator = true;
             this.lvReport.UseFiltering = true;
@@ -897,20 +927,20 @@
             this.olvColumnDate.AspectName = "date";
             this.olvColumnDate.FillsFreeSpace = true;
             this.olvColumnDate.IsEditable = false;
-            this.olvColumnDate.Text = "Date";
+            this.olvColumnDate.Text = "Datum";
             // 
             // olvColumnSales
             // 
             this.olvColumnSales.AspectName = "sales";
             this.olvColumnSales.IsEditable = false;
-            this.olvColumnSales.Text = "Sales";
+            this.olvColumnSales.Text = "Prodaja";
             this.olvColumnSales.Width = 105;
             // 
             // olvColumnPurchases
             // 
             this.olvColumnPurchases.AspectName = "purchases";
             this.olvColumnPurchases.IsEditable = false;
-            this.olvColumnPurchases.Text = "Purchases";
+            this.olvColumnPurchases.Text = "Kupovina";
             this.olvColumnPurchases.Width = 142;
             // 
             // tabPage5
@@ -929,7 +959,7 @@
             this.tabPage5.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage5.Size = new System.Drawing.Size(1173, 713);
             this.tabPage5.TabIndex = 1;
-            this.tabPage5.Text = "Statistics";
+            this.tabPage5.Text = "Statistika";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // lblTotalExpenses
@@ -982,9 +1012,9 @@
             this.label18.Location = new System.Drawing.Point(34, 184);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(146, 28);
+            this.label18.Size = new System.Drawing.Size(143, 28);
             this.label18.TabIndex = 0;
-            this.label18.Text = "Total expenses :";
+            this.label18.Text = "Ukupni trosak :";
             // 
             // label17
             // 
@@ -992,9 +1022,9 @@
             this.label17.Location = new System.Drawing.Point(50, 132);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(132, 28);
+            this.label17.Size = new System.Drawing.Size(148, 28);
             this.label17.TabIndex = 0;
-            this.label17.Text = "Total Income :";
+            this.label17.Text = "Ukupni prihod :";
             // 
             // label16
             // 
@@ -1002,9 +1032,9 @@
             this.label16.Location = new System.Drawing.Point(30, 79);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(151, 28);
+            this.label16.Size = new System.Drawing.Size(200, 28);
             this.label16.TabIndex = 0;
-            this.label16.Text = "Least item sold :";
+            this.label16.Text = "Najmanje prodavano:";
             // 
             // label15
             // 
@@ -1012,9 +1042,9 @@
             this.label15.Location = new System.Drawing.Point(30, 26);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(152, 28);
+            this.label15.Size = new System.Drawing.Size(155, 28);
             this.label15.TabIndex = 0;
-            this.label15.Text = "Most item sold :";
+            this.label15.Text = "Najprodavanije :";
             // 
             // btnSearch
             // 
@@ -1024,7 +1054,7 @@
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(121, 36);
             this.btnSearch.TabIndex = 6;
-            this.btnSearch.Text = "&SEARCH";
+            this.btnSearch.Text = "&Trazi";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -1045,9 +1075,9 @@
             this.label14.Location = new System.Drawing.Point(838, 19);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(41, 28);
+            this.label14.Size = new System.Drawing.Size(42, 28);
             this.label14.TabIndex = 4;
-            this.label14.Text = "To :";
+            this.label14.Text = "Do:";
             // 
             // dtFrom
             // 
@@ -1067,9 +1097,9 @@
             this.label5.Location = new System.Drawing.Point(575, 16);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 28);
+            this.label5.Size = new System.Drawing.Size(48, 28);
             this.label5.TabIndex = 2;
-            this.label5.Text = "From :";
+            this.label5.Text = "Od :";
             // 
             // chkPurchases
             // 
@@ -1079,9 +1109,9 @@
             this.chkPurchases.Location = new System.Drawing.Point(128, 21);
             this.chkPurchases.Margin = new System.Windows.Forms.Padding(4);
             this.chkPurchases.Name = "chkPurchases";
-            this.chkPurchases.Size = new System.Drawing.Size(119, 32);
+            this.chkPurchases.Size = new System.Drawing.Size(117, 32);
             this.chkPurchases.TabIndex = 1;
-            this.chkPurchases.Text = "Purchases";
+            this.chkPurchases.Text = "Kupovine";
             this.chkPurchases.UseVisualStyleBackColor = true;
             this.chkPurchases.CheckedChanged += new System.EventHandler(this.chkPurchases_CheckedChanged);
             // 
@@ -1093,9 +1123,9 @@
             this.chkSales.Location = new System.Drawing.Point(19, 21);
             this.chkSales.Margin = new System.Windows.Forms.Padding(4);
             this.chkSales.Name = "chkSales";
-            this.chkSales.Size = new System.Drawing.Size(78, 32);
+            this.chkSales.Size = new System.Drawing.Size(101, 32);
             this.chkSales.TabIndex = 0;
-            this.chkSales.Text = "Sales";
+            this.chkSales.Text = "Prodaje";
             this.chkSales.UseVisualStyleBackColor = true;
             this.chkSales.CheckedChanged += new System.EventHandler(this.chkSales_CheckedChanged);
             // 
@@ -1228,5 +1258,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.DateTimePicker dpInvoiceDate_Purchase;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox ItemRefCode;
+        private System.Windows.Forms.Label label22;
     }
 }
