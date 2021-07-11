@@ -97,6 +97,7 @@ namespace StockInventoryManagement
             {
                 case classes.ActionItem.Action.STOCK:
                     saleForm.refreshReport();
+                    saleForm.init();
                     break;
 
                 case classes.ActionItem.Action.TRANSACTIONS:

@@ -303,47 +303,55 @@ namespace StockInventoryManagement
                     param[0] = new SQLiteParameter("@from", from);
                     param[1] = new SQLiteParameter("@to", to);
                     //SQLiteDataReader dr = Job.Database.executeReader("select tranTime as DATES, tranType as TYPE, sum(tranTotalPrice) as AMOUNT from _transaction " + where + " group by tranTime, tranType", param);
-                    SQLiteDataReader dr = Job.Database.executeReader("select tranId, tranTime as DATES, tranType as TYPE, tranTotalPrice as AMOUNT from _transaction " + where+" order by tranTime", param);
+                    SQLiteDataReader dr = Job.Database.executeReader("select _transaction.tranId as ID, _transaction.tranTime as DATES, _transaction.tranType as TYPE, _transaction.tranTotalPrice as AMOUNT, _transaction_data.dataQty as QUANTITY, _transaction_data.dataPPU as PPU, _item.itemName as NAME from _transaction join _transaction_data on _transaction.tranId=_transaction_data.dataTranId join _item on _item.itemId=_transaction_data.dataItemId " + where+" order by _transaction.tranTime", param);
                     if (dr != null)
                     {
                         while (dr.Read())
                         {
                             try
                             {
-                                long tranId = long.Parse(dr["tranId"].ToString());
+                                long tranId = long.Parse(dr["ID"].ToString());
                                 DateTime? date = (DateTime?)dr["DATES"];
                                 String type = dr["TYPE"].ToString().ToUpper();
                                 double amount = double.Parse(dr["AMOUNT"].ToString());
+                                int quantity = int.Parse(dr["QUANTITY"].ToString());
+                                double ppu = double.Parse(dr["PPU"].ToString());
+                                string name = dr["NAME"].ToString();
 
                                 if (true)
                                 {
-                                    table.Add(tranId, new classes.TransactionReport());
+                                    // table.Add(tranId, new classes.TransactionReport());
                                 }
 
-                                classes.TransactionReport entry = ((classes.TransactionReport)table[tranId]);
+                                classes.TransactionReport entry = new classes.TransactionReport();//((classes.TransactionReport)table[tranId]);
                                 entry.date = date;
                                 entry.tranId = tranId;
+                                entry.name = name;
+                                entry.quantity = quantity;
+                                entry.ppu = ppu;
                                 switch (type)
                                 {
                                     case "SALE":
-                                        entry.sales = amount;
+                                        entry.sales = ppu*quantity;
                                         totalSales += entry.sales;
                                         break;
                                     case "PURCHASE":
-                                        entry.purchases = amount;
+                                        entry.purchases = ppu * quantity;
                                         totalPurchase += entry.purchases;
                                         break;
                                 }
+
+                                report.Add((classes.TransactionReport)entry);
                             }
                             catch (Exception) { }
                         }
                     }
 
-                    System.Collections.IEnumerator tor = table.Values.GetEnumerator();
-                    while (tor.MoveNext())
-                    {
-                        report.Add((classes.TransactionReport)tor.Current);
-                    }
+                    //System.Collections.IEnumerator tor = table.Values.GetEnumerator();
+                    //while (tor.MoveNext())
+                    //{
+                    //    report.Add((classes.TransactionReport)tor.Current);
+                    //}
 
                     #region Minimum and Maximum Items sold
                     double min = double.MaxValue, max = 0;

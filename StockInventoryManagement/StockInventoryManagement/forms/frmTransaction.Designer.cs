@@ -87,6 +87,9 @@
             this.lblTotalStatus = new System.Windows.Forms.Label();
             this.lvReport = new BrightIdeasSoftware.ObjectListView();
             this.olvColumnDate = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnQuantity = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnPricePerUnit = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnSales = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnPurchases = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.tabPage5 = new System.Windows.Forms.TabPage();
@@ -862,7 +865,7 @@
             // 
             this.lblTotalStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTotalStatus.AutoSize = true;
-            this.lblTotalStatus.Location = new System.Drawing.Point(12, 801);
+            this.lblTotalStatus.Location = new System.Drawing.Point(12, 825);
             this.lblTotalStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalStatus.Name = "lblTotalStatus";
             this.lblTotalStatus.Size = new System.Drawing.Size(344, 28);
@@ -872,30 +875,33 @@
             // lvReport
             // 
             this.lvReport.AllColumns.Add(this.olvColumnDate);
+            this.lvReport.AllColumns.Add(this.olvColumnName);
+            this.lvReport.AllColumns.Add(this.olvColumnQuantity);
+            this.lvReport.AllColumns.Add(this.olvColumnPricePerUnit);
             this.lvReport.AllColumns.Add(this.olvColumnSales);
             this.lvReport.AllColumns.Add(this.olvColumnPurchases);
             this.lvReport.AllowColumnReorder = true;
             this.lvReport.AlternateRowBackColor = System.Drawing.Color.Gainsboro;
-            this.lvReport.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lvReport.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lvReport.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
             this.lvReport.CellEditTabChangesRows = true;
             this.lvReport.CellEditUseWholeCell = false;
             this.lvReport.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumnDate,
+            this.olvColumnName,
+            this.olvColumnQuantity,
+            this.olvColumnPricePerUnit,
             this.olvColumnSales,
             this.olvColumnPurchases});
             this.lvReport.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lvReport.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvReport.EmptyListMsg = "Empty list";
             this.lvReport.EmptyListMsgFont = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvReport.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvReport.FullRowSelect = true;
             this.lvReport.GridLines = true;
-            this.lvReport.HeaderWordWrap = true;
             this.lvReport.HideSelection = false;
-            this.lvReport.Location = new System.Drawing.Point(12, 12);
+            this.lvReport.Location = new System.Drawing.Point(4, 4);
             this.lvReport.Margin = new System.Windows.Forms.Padding(4);
             this.lvReport.Name = "lvReport";
             this.lvReport.OverlayText.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -908,7 +914,7 @@
             this.lvReport.ShowCommandMenuOnRightClick = true;
             this.lvReport.ShowGroups = false;
             this.lvReport.ShowItemToolTips = true;
-            this.lvReport.Size = new System.Drawing.Size(1150, 786);
+            this.lvReport.Size = new System.Drawing.Size(1165, 705);
             this.lvReport.TabIndex = 6;
             this.lvReport.TintSortColumn = true;
             this.lvReport.UnfocusedSelectedBackColor = System.Drawing.Color.SteelBlue;
@@ -925,9 +931,22 @@
             // olvColumnDate
             // 
             this.olvColumnDate.AspectName = "date";
-            this.olvColumnDate.FillsFreeSpace = true;
-            this.olvColumnDate.IsEditable = false;
             this.olvColumnDate.Text = "Datum";
+            // 
+            // olvColumnName
+            // 
+            this.olvColumnName.AspectName = "name";
+            this.olvColumnName.Text = "Naziv artikla";
+            // 
+            // olvColumnQuantity
+            // 
+            this.olvColumnQuantity.AspectName = "quantity";
+            this.olvColumnQuantity.Text = "Kolicina";
+            // 
+            // olvColumnPricePerUnit
+            // 
+            this.olvColumnPricePerUnit.AspectName = "ppu";
+            this.olvColumnPricePerUnit.Text = "Cena po komadu";
             // 
             // olvColumnSales
             // 
@@ -1260,5 +1279,8 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox ItemRefCode;
         private System.Windows.Forms.Label label22;
+        private BrightIdeasSoftware.OLVColumn olvColumnName;
+        private BrightIdeasSoftware.OLVColumn olvColumnQuantity;
+        private BrightIdeasSoftware.OLVColumn olvColumnPricePerUnit;
     }
 }

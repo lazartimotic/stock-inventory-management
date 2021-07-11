@@ -10,5 +10,8 @@ namespace StockInventoryManagement.classes
         public long tranId;
         public DateTime? date;
         public double sales = 0, purchases = 0;
+        public string name;
+        public int quantity;
+        public double ppu;
     }
 }
